@@ -1,9 +1,9 @@
 # Google Cloud Platform Kubernetes Cluster Terraform Module
 
 ## Install prerequisutes:
-Git
-terraform 0.11.14
-kubectl command
+Git,
+terraform  version 0.11.14,
+kubectl command,
 gcloud init
 
 ## Cluster deployment
