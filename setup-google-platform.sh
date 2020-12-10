@@ -29,14 +29,14 @@ export KEY=$(gcloud iam service-accounts keys list --iam-account="$SERVICE_ACCOU
 gcloud iam service-accounts keys delete $KEY --iam-account="$SERVICE_ACCOUNT_EMAIL" --quiet
 
 ## Making sure the service account json file is created
-if [[ -f "fuchicorp-service-account.json" ]]; then
-    echo "${red}It turns out you have already fuchicorp-service-account.json and now it moved  to old-fuchicorp-service-account.json${reset}"
-    /bin/mv fuchicorp-service-account.json old-fuchicorp-service-account.json
-    gcloud iam service-accounts keys create fuchicorp-service-account.json --iam-account="$SERVICE_ACCOUNT_EMAIL"
-    echo "${green}The <fuchicorp-service-account.json> is created!!${reset}"
+if [[ -f "cluster-service-account.json" ]]; then
+    echo "${red}It turns out you have already cluster-service-account.json and now it moved  to old-cluster-service-account.json${reset}"
+    /bin/mv cluster-service-account.json old-cluster-service-account.json
+    gcloud iam service-accounts keys create cluster-service-account.json --iam-account="$SERVICE_ACCOUNT_EMAIL"
+    echo "${green}The <cluster-service-account.json> is created!!${reset}"
 else
-    gcloud iam service-accounts keys create fuchicorp-service-account.json --iam-account="$SERVICE_ACCOUNT_EMAIL"
-    echo "${green}The <fuchicorp-service-account.json> is created!!${reset}"
+    gcloud iam service-accounts keys create cluster-service-account.json --iam-account="$SERVICE_ACCOUNT_EMAIL"
+    echo "${green}The <cluster-service-account.json> is created!!${reset}"
 fi
 
 ## Creating the uniq bucket in GCP

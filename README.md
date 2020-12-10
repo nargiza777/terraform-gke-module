@@ -31,11 +31,11 @@ source setup-google-platform.sh example-bucket
 ### Create terraform configuration 
 Create `cluster.tfvars` file with following content:
 ```
-google_project_id        = "GOOGLE_PROJECT_ID"
-cluster_version          = "KUBERNETES_VERSION"
-cluster_name             = "Project-Cluster"
-google_bucket_name       = "GCS_BUCKET_NAME"
-deployment_environment   = "ENVIRONMENT"
+google_project_id        = ""
+cluster_name             = "project-cluster"
+cluster_version          = "1.16"
+google_bucket_name       = ""
+deployment_environment   = ""
 google_credentials_json  = "cluster-service-account.json"
 deployment_name          = "cluster-infrastructure"
 google_region            = "us-west1-b"
@@ -60,10 +60,10 @@ terraform apply  -var-file=$DATAFILE
 
 
 ### The terraform will create following resources on Google Cloud Platform
-1. Kubernetes cluster 'Project-Cluster`
+1. Kubernetes cluster 'project-cluster`
 2. Google Service Account `cluster-service-account`
 
 After you have deployed you should use following command to get `~/.kube/config` to be able to get access to kubernetes cluster
 ```
-gcloud container clusters get-credentials Project-Cluster --zone us-west1-b
+gcloud container clusters get-credentials project-cluster --zone us-west1-b
 ```

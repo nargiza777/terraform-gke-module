@@ -32,7 +32,7 @@ variable "cluster_version" {
 }
 
 variable "google_credentials_json" {
-  default = "fuchicorp-service-account.json"
+  default = "cluster-service-account.json"
   description = "- (Optional) Google Service account Json file."
 }
 
