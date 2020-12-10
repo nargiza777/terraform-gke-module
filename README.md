@@ -1,5 +1,11 @@
 # Google Cloud Platform Kubernetes Cluster Terraform Module
 
+## Install prerequisutes:
+Git
+terraform 0.11.14
+kubectl command
+gcloud init
+
 ## Cluster deployment
 In order to deploy kubernetes cluster in GCP. You need to clone a cluster-infrastructure repository from Fuchicorp and go to the kube-cluster folder 
 ```
