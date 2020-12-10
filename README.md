@@ -35,13 +35,11 @@ source setup-google-platform.sh fuchicorp-example-bucket
 ### Create terraform configuration 
 Create `cluster.tfvars` file with following content:
 ```
-google_domain_name       = "yourdomain.com"
 google_project_id        = "GOOGLE_PROJECT_ID"
-google_email             = "example@gmail.com"
 cluster_version          = "1.16"
-google_bucket_name       = "fuchicorp-gulshen"
+google_bucket_name       = "GCS_Bucket_Name"
 deployment_environment   = "tools"
-google_credentials_json  = "fuchicorp-service-account.json"
+google_credentials_json  = "cluster-service-account.json"
 deployment_name          = "cluster-infrastructure"
 google_region            = "us-west1-b"
 ```
@@ -66,8 +64,7 @@ terraform apply  -var-file=$DATAFILE
 
 ### The terraform will create following resources on Google Cloud Platform
 1. Kubernetes cluster  `fuchicorp-cluster`
-2. DNS Nameserver   `cluster-infrastructure-zone`
-3. Google Service Account `common-service-account`
+2. Google Service Account `common-service-account`
 
 After you have deployed you should use following command to get `~/.kube/config` to be able to get access to kubernetes cluster
 ```
