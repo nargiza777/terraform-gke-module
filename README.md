@@ -10,7 +10,7 @@ gcloud init
 In order to deploy kubernetes cluster in GCP. You need to clone a cluster-infrastructure repository from Fuchicorp and go to the kube-cluster folder 
 ```
 
-git clone
+git clone repo URL
 ```
 
 
